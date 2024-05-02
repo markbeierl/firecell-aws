@@ -30,17 +30,4 @@ module "sdcore" {
     upf-mode                     = "dpdk"
   }
 
-#  upf_config = {
-#    cni-type                     = "vfioveth"
-#    access-gateway-ip            = "10.0.4.95"
-#    access-interface-mac-address = "02:28:4d:51:cc:15"
-#    access-ip                    = "10.0.4.211/24"
-#    core-gateway-ip              = "10.0.3.1"
-#    core-interface-mac-address   = "02:c9:57:70:9c:db"
-#    core-ip                      = "10.0.3.72/24"
-#    enable-hw-checksum           = "false"
-#    gnb-subnet                   = "10.8.0.0/24"
-#    upf-mode                     = "dpdk"
-#  }
-
 }
