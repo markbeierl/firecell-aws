@@ -6,3 +6,9 @@ variable "sdcore_model_name" {
   type        = string
   default     = "sdcore"
 }
+
+variable "gnb_model_name" {
+  description = "Name of Juju model to deploy application to."
+  type        = string
+  default     = "radio"
+}

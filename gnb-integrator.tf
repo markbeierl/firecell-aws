@@ -1,7 +1,12 @@
+resource "juju_model" "gnb" {
+  name = var.gnb_model_name
+}
+
+
 module "gnb01" {
-  app_name   = "firecell-gnb01"
-  source     = "git::https://github.com/canonical/sdcore-gnb-integrator//terraforms?ref=v1.4"
-  model_name = "gnb-integration"
+  app_name   = "fc01"
+  source     = "git::https://github.com/canonical/sdcore-gnb-integrator//terraform?ref=v1.4"
+  model_name = juju_model.gnb.name
   channel    = "1.4/edge"
   config     = {
     tac: 1
@@ -9,17 +14,17 @@ module "gnb01" {
 }
 
 resource "juju_offer" "gnb01-fiveg-gnb-identity" {
-  model            = "gnb-integration"
+  model            = juju_model.gnb.name
   application_name = module.gnb01.app_name
   endpoint         = module.gnb01.fiveg_gnb_identity_endpoint
 }
 
 resource "juju_integration" "nms-gnb01" {
-  model = "control-plane"
+  model = juju_model.sdcore.name
 
   application {
-    name     = module.sdcore-control-plane.nms_app_name
-    endpoint = module.sdcore-control-plane.fiveg_gnb_identity_endpoint
+    name     = module.sdcore.nms_app_name
+    endpoint = module.sdcore.fiveg_gnb_identity_endpoint
   }
 
   application {
