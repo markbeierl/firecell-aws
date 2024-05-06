@@ -7,7 +7,7 @@ module "sdcore" {
 
   model_name = juju_model.sdcore.name
   sdcore_channel = "1.4/beta"
-  create_model = false
+  create_model = true
   deploy_cos = true
 
   depends_on = [juju_model.sdcore]
