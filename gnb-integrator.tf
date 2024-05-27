@@ -2,12 +2,11 @@ resource "juju_model" "gnb" {
   name = var.gnb_model_name
 }
 
-
 module "gnb01" {
   app_name   = "fc01"
   source     = "git::https://github.com/canonical/sdcore-gnb-integrator//terraform?ref=v1.4"
   model_name = juju_model.gnb.name
-  channel    = "1.4/beta"
+  channel    = "1.4/edge"
   config     = {
     tac: 1
   }
