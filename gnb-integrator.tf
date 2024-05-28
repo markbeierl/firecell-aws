@@ -19,11 +19,11 @@ resource "juju_offer" "gnb01-fiveg-gnb-identity" {
 }
 
 resource "juju_integration" "nms-gnb01" {
-  model = juju_model.sdcore.name
+  model = var.control_plane_model_name
 
   application {
-    name     = module.sdcore.nms_app_name
-    endpoint = module.sdcore.fiveg_gnb_identity_endpoint
+    name     = module.control_plane.nms_app_name
+    endpoint = module.control_plane.fiveg_gnb_identity_endpoint
   }
 
   application {
