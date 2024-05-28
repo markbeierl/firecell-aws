@@ -25,6 +25,7 @@ done
 
 curl -v ${WEBUI_IP}:5000/config/v1/device-group/default-default --header 'Content-Type: application/json' --data '{
     "imsis": [
+        "208930100007480",
         "208930100007481",
         "208930100007482",
         "208930100007483",
@@ -33,7 +34,7 @@ curl -v ${WEBUI_IP}:5000/config/v1/device-group/default-default --header 'Conten
         "208930100007486",
         "208930100007487",
         "208930100007488",
-        "208930100007489",
+        "208930100007489"
     ],
     "site-info": "demo",
     "ip-domain-name": "pool1",
@@ -43,9 +44,9 @@ curl -v ${WEBUI_IP}:5000/config/v1/device-group/default-default --header 'Conten
         "dns-primary": "8.8.8.8",
         "mtu": 1460,
         "ue-dnn-qos": {
-            "dnn-mbr-uplink": 20000000,
-            "dnn-mbr-downlink": 200000000,
-            "bitrate-unit": "bps",
+            "dnn-mbr-uplink": 500,
+            "dnn-mbr-downlink": 500,
+            "bitrate-unit": "mbps",
             "traffic-class": {
                 "name": "platinum",
                 "arp": 6,
@@ -82,3 +83,4 @@ curl -v ${WEBUI_IP}:5000/config/v1/network-slice/default --header 'Content-Type:
     }
   }
 }'
+```

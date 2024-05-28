@@ -25,7 +25,7 @@ module "user_plane" {
     core-gateway-ip              = "10.0.3.1"
     core-interface-mac-address   = "02:f7:d2:e1:61:93"
     core-ip                      = "10.0.3.94/24"
-    enable-hw-checksum           = "false"
+    enable-hw-checksum           = "true"
     gnb-subnet                   = "10.8.0.0/24"
     upf-mode                     = "dpdk"
   }
