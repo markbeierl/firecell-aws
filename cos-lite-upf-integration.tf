@@ -35,4 +35,3 @@ resource "juju_integration" "loki" {
     offer_url = juju_offer.loki.url
   }
 }
-
