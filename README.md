@@ -44,8 +44,8 @@ curl -v ${WEBUI_IP}:5000/config/v1/device-group/default-default --header 'Conten
         "dns-primary": "8.8.8.8",
         "mtu": 1460,
         "ue-dnn-qos": {
-            "dnn-mbr-uplink": 500,
-            "dnn-mbr-downlink": 500,
+            "dnn-mbr-uplink": 5,
+            "dnn-mbr-downlink": 200,
             "bitrate-unit": "mbps",
             "traffic-class": {
                 "name": "platinum",
